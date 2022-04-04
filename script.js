@@ -48,18 +48,26 @@ setInterval(clock, 1000);
 
 
 function TimeDetails() {
-    var detail = document.getElementById("mrg")
-    var detail1 = detail.value
-    document.getElementById("WT").innerHTML=detail1
-
-    var detail2 = document.getElementById("afternoon").value
-    document.getElementById("LT").innerHTML=detail2
-
-    var detail3 = document.getElementById("evening").value
-    document.getElementById("NT").innerHTML=detail3
-
-    var detail4 = document.getElementById("ngt").value
-    document.getElementById("NTT").innerHTML=detail4
+    
+    var A = document.getElementById("mrg");
+    var text1 = A.options[A.selectedIndex].text;
+    
+    var B = document.getElementById("afternoon");
+    var text2 = B.options[B.selectedIndex].text;
+    
+    var C = document.getElementById("evening");
+    var text3 = C.options[C.selectedIndex].text;
+    
+    var D = document.getElementById("ngt");
+    var text4 = D.options[D.selectedIndex].text;
+    
+    
+    var idExist = document.getElementById("details");
+    if(idExist)
+    {
+        idExist.innerHTML = `Wake Up Time : ${text1} <br> Lunch Time : ${text2} <br> Nap Time : ${text3} <br> Night Time : ${text4}` ;
+    }
+    
 }    
 
 
@@ -95,5 +103,7 @@ function SetTimes() {
         document.getElementById("txt1").innerHTML="GOOD NIGHT!! SWEET DREAMS!!";
         document.getElementById("txt2").innerHTML="CLOSE YOUR EYES AND GO TO SLEEP..!!!";
     }    
+    
     TimeDetails();
+    
 }   
